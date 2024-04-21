@@ -1,23 +1,30 @@
+// * Base
 import { EButton } from '../../types/button.types';
 import styles from './Button.module.css';
 import cn from 'classnames';
+
 import React from 'react';
 
 // * Types Local
-
 type TProps = {
   disabled: boolean;
   text: string;
   href: string;
   type: EButton;
-  color: string;
+  color: EColor;
   onClick: () => void;
 };
+
+enum EColor {
+  DEFAULT = 'default',
+  WHITE = 'white',
+  RED = 'red',
+}
 
 const Button: React.FC<TProps> = ({
   text = 'default text',
   type,
-  color = '',
+  color,
   href = '',
   onClick,
   disabled = false,
@@ -25,11 +32,11 @@ const Button: React.FC<TProps> = ({
   const stylelist = [styles.button];
 
   switch (color) {
-    case 'red': {
+    case EColor.RED: {
       stylelist.push(styles.red);
       break;
     }
-    case 'white': {
+    case EColor.WHITE: {
       stylelist.push(styles.white);
       break;
     }
