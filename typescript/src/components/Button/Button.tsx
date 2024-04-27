@@ -69,7 +69,7 @@ type TLinkProps = {
   onClick: () => void;
 };
 
-const Link: React.FC<TLinkProps> = ({ text, href, onClick, stylelist }) => {
+const Link: React.FC<TLinkProps> = ({ text, onClick, stylelist }) => {
   return (
     <a target='_blank' onClick={onClick} className={cn(stylelist)}>
       <span> {text}</span>

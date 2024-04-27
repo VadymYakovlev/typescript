@@ -1,0 +1,7 @@
+/* .wrapper {
+  @apply px-2 max-w-p[1200px] m-auto;
+} */
+
+.link {
+  @apply font-bold leading-none hover:text-yellow-500 transition-colors duration-200 cursor-pointer;
+}
